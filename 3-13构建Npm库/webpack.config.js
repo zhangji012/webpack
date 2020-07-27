@@ -9,11 +9,11 @@ module.exports = {
     filename: 'index.js',
     // 输出文件的存放目录
     path: path.resolve(__dirname, 'lib'),
-    // 输出的代码符合 CommonJS 模块化规范，以供给其它模块导入使用。
+    // 输出的代码符合 CommonJS 模块化规范，以供给其它模块导入使用。注意点
     libraryTarget: 'commonjs2',
   },
   // 通过正则命中所有以 react 或者 babel-runtime 开头的模块
-  // 这些模块使用外部的，不能被打包进输出的代码里
+  // 这些模块使用外部的，不能被打包进输出的代码里  注意点
   externals: /^(react|babel-runtime)/,
   module: {
     rules: [
@@ -40,6 +40,6 @@ module.exports = {
       filename: 'index.css',
     }),
   ],
-  // 输出 Source Map
+  // 输出 Source Map  注意点
   devtool: 'source-map',
 };
